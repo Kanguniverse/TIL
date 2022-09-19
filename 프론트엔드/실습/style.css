@@ -1,0 +1,36 @@
+body{
+    background-color: black;
+}
+
+h1{
+    color: white;
+    text-align: center;
+}
+
+div{
+    color:#2997ff;
+    border: 1px solid white;
+    padding: 5px;
+}
+
+div.dotted{
+    border:0;
+    margin: 20px 0;
+    background-color: #bde0fe;
+    color:white;
+}
+
+span{
+    margin: 5px;
+}
+
+span.here:hover{
+    background-color: black; color:white;
+    cursor:pointer;
+    transition: background-color 2s ease, color 2s ease;
+}
+
+span::after{content: "span";}
+span:last-child{
+    color:rgb(255, 128, 128)
+}

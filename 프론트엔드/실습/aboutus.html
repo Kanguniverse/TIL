@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>About Me</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body{background-color: black;}
+        img{width: 45%;height: 300px; margin:10px 2%}
+        h2{
+            padding-left: 10px;
+            color:white;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+        }
+        div{
+            padding: 15px;
+            color:white;
+        }
+        #answer{
+            display: none;
+            padding-left: 10px;
+        }
+        span{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- HTML 본문 영역-->
+    <h2>다음 중 제가 좋아하는 가수는 누굴까요? <span id="answer">IU</span></h2>
+
+
+    <div>
+        보기
+    </div>
+        <img class="wrong"src="https://newsimg.sedaily.com/2022/03/30/263MBCDUNQ_1.jpg">
+        <img class="wrong"src="https://dimg.donga.com/wps/NEWS/IMAGE/2021/12/24/110942647.2.jpg">
+        <img class="wrong"src="https://img.asiatoday.co.kr/file/2022y/08m/02d/2022080201000185800010521.jpg">
+        <img class="correct" src="https://thumb.pann.com/tc_480/https://fimg5.pann.com/new/download.jsp?FileID=57109545">
+    <div id="mydiv">
+        정답을 알려면 다음 버튼을 클릭하세요<button id="display_button">The Answer</button>
+    </div>
+
+    <div>
+
+    </div>
+
+    <!-- 자바스크립트 영역 -->
+    <script>
+        var elt = document.getElementById("display_button");
+        elt.addEventListener("click",eh);
+        function eh()
+        {
+           var answer = document.getElementById("answer");
+           if (answer.style.display =="none"){
+            answer.style.display = "inline";
+           }
+           else {
+            answer.style.display="none"
+           }
+        }
+    </script>
+</body>
+</html>
