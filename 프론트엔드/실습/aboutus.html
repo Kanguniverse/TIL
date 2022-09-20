@@ -7,17 +7,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
     <style>
-        body{background-color: black;}
-        img{width: 45%;height: 300px; margin:10px 2%}
+        #head_div{
+            background-color: #333333;
+            font-size: 30px;
+            margin-bottom: 20px;
+            color:white;
+        }
+        img{width: 45%;height: 250px; margin:10px 2%}
         h2{
             padding-left: 10px;
-            color:white;
             font-family: 'Roboto', sans-serif;
             font-size: 20px;
         }
         div{
             padding: 15px;
-            color:white;
         }
         #answer{
             display: none;
@@ -26,22 +29,69 @@
         span{
             font-size: 20px;
         }
+        article{
+            margin-bottom: 30px;
+        }
+        .SectionTitle{
+            padding: 0;
+            font-weight: 600;
+            font-size:30px;
+        }
+        #correct_2{
+            display: none;
+        }
+        table{
+            margin: 0 auto;
+            width: 95%;
+            border-collapse: collapse;
+            border:2px solid black;
+        }
+        tr{
+            text-align: center;
+        }
+        #tr_head{
+            font-weight: 600;
+            background-color: gray;
+        }
     </style>
 </head>
 <body>
     <!-- HTML 본문 영역-->
-    <h2>다음 중 제가 좋아하는 가수는 누굴까요? <span id="answer">IU</span></h2>
+    <header>
+        <div id="head_div">Minwoo's Blog</div>
+    </header>
+    <article>
+        <div class="AboutME_content">
+            <div class="SectionTitle">About Me</div>
+        </div>
+        <table>
+            <tr id="tr_head">
+                <td>이름</td>
+                <td>생년월일</td>
+                <td>주소지</td>
+                <td>연락처</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </article>
+    <h2>Quiz. 다음 중 제가 좋아하는 가수는 누굴까요? <span id="answer">IU</span></h2>
 
 
     <div>
-        보기
+        <b><보기></b>
     </div>
         <img class="wrong"src="https://newsimg.sedaily.com/2022/03/30/263MBCDUNQ_1.jpg">
-        <img class="wrong"src="https://dimg.donga.com/wps/NEWS/IMAGE/2021/12/24/110942647.2.jpg">
+        <img id="correct"src="https://dimg.donga.com/wps/NEWS/IMAGE/2021/12/24/110942647.2.jpg">
         <img class="wrong"src="https://img.asiatoday.co.kr/file/2022y/08m/02d/2022080201000185800010521.jpg">
-        <img class="correct" src="https://thumb.pann.com/tc_480/https://fimg5.pann.com/new/download.jsp?FileID=57109545">
+        <img class="wrong" src="https://thumb.pann.com/tc_480/https://fimg5.pann.com/new/download.jsp?FileID=57109545">
+        <img id="correct_2" src="사진.jpg">
     <div id="mydiv">
-        정답을 알려면 다음 버튼을 클릭하세요<button id="display_button">The Answer</button>
+        정답을 알려면 다음 버튼을 클릭하세요 <button id="display_button">정답</button>
     </div>
 
     <div>
@@ -55,11 +105,23 @@
         function eh()
         {
            var answer = document.getElementById("answer");
+           var wrong_picture = document.getElementsByClassName("wrong");
+           var right_picture = document.getElementById("correct_2");
            if (answer.style.display =="none"){
             answer.style.display = "inline";
+            for(i=0;i<wrong_picture.length;i++)
+            {
+                wrong_picture[i].style.display="none"
+            }        
+            right_picture.style.display="inline"   
            }
            else {
             answer.style.display="none"
+            for(i=0;i<wrong_picture.length;i++)
+            {
+                wrong_picture[i].style.display="inline"
+            }  
+            right_picture.style.display="none" 
            }
         }
     </script>

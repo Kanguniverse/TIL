@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table{
+            border: 3px solid black;   
+            border-collapse: collapse;
+            width: 40%;
+            height: 80px;
+            border-left: none;
+            border-right: none;
+        }
+        td {
+            border:0.5px solid black;
+            text-align: center;
+            padding: 0;
+            border-left: 0;
+            border-right: 0;
+        }
+        th{
+            background-color: gray;
+            text-align: center;
+            border: 1.5px solid black;
+            border-bottom: 2px double black;
+            padding: 0;
+            border-left: 0;
+            border-right: 0;
+        }
+    </style>
+    <title>Table</title>
+</head>
+<body>
+    <table>
+    <tr>
+        <th>이름</th>
+        <th>성별</th>
+        <th>나이</th>
+    </tr>
+    <tr>
+        <td>홍길동</td>
+        <td>남자</td>
+        <td>32</td>
+    </tr>
+    <tr>
+        <td>홍길순</td>
+        <td>여자</td>
+        <td>28</td>
+    </tr>
+    </table>
+    <br>
+
+    <table >
+        <tr>
+            <th>이름</th>
+            <th>전공</th>
+            <th>취미</th>
+            <th>신장</th>
+        </tr>
+        <tr>
+            <td>홍길동</td>
+            <td>통계학</td>
+            <td>낚시</td>
+            <td>175</td>
+        </tr>
+        <tr>
+            <td>홍길순</td>
+            <td colspan="3">응답없음</td>
+        </tr>
+        </table>
+        <br>
+    <button onclick="myLoop()">Color Change</button>
+    <script>
+        // function go()
+        // {
+        //     var tr_data = document.getElementsByTagName("td");
+        //     // for(let i=0;i<tr_data.length;i++)
+        //     // {
+        //     //     var red = Math.floor(Math.random()*256);
+        //     //     var green = Math.floor(Math.random()*256);
+        //     //     var blue = Math.floor(Math.random()*256);
+
+        //     //     console.log(red,green,blue);
+
+        //     //     tr_data[i].style.backgroundColor=`rgb(${red},${green},${blue})`;
+        //     // }
+        //     var i = 0;
+        //     myLoop(tr_data.length)
+        // }
+        var i = 0;
+        var tr_data = document.getElementsByTagName("td");
+        function myLoop() {         //  create a loop function
+            setTimeout(function() {   //  call a 3s setTimeout when the loop is called
+                var red = Math.floor(Math.random()*256);
+                var green = Math.floor(Math.random()*256);
+                var blue = Math.floor(Math.random()*256);
+                  //  increment the counter
+                    if (i<tr_data.length) {           //  if the counter < 10, call the loop function
+                        tr_data[i].style.backgroundColor=`rgb(${red},${green},${blue})`
+                        i++; 
+                        myLoop();             //  ..  again which will trigger another 
+                    }                       //  ..  setTimeout()
+                    else{
+                        i=0;
+                        myLoop();
+                    }
+            }, 300)
+        }
+    </script>
+</body>
+</html>
