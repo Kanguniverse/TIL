@@ -34,6 +34,11 @@
       table tr td {
         transition: background-color 0.3s ease;
       }
+      td:hover {
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: underline;
+      }
     </style>
   </head>
   <body>
@@ -90,6 +95,10 @@
         .querySelector("div.cell-table div.change-shape button.delete-row")
         .addEventListener("click", deleteCellRow);
 
+      var m_tdset = document.querySelectorAll("div.cell-table tr td");
+      for (var m_td of m_tdset)
+        m_td.addEventListener("dblclick", deleteSpecificRow);
+
       function changeCellColors() {
         var tdset = document.getElementsByTagName("td");
         var times = 0;
@@ -117,9 +126,21 @@
       function addCellRow() {
         var row = document.createElement("tr");
         var cell;
-        var cellcount = document.getElementsByTagName("td").length;
+        var lastnumber = document.getElementsByTagName("td").length;
+        console.log(lastnumber);
+        var cellcount;
+        if (lastnumber == 0) {
+          cellcount = 0;
+        } else {
+          cellcount = Number(
+            document.getElementsByTagName("td")[lastnumber - 1].innerText
+          );
+        }
         for (i = 0; i < 4; i++) {
           cell = document.createElement("td");
+          if (lastnumber == 0) {
+            cell.bgColor = "yellow";
+          }
           cell.textContent = cellcount + i + 1;
           row.appendChild(cell);
         }
@@ -127,15 +148,22 @@
           "div.cell-table table.numeric-cells"
         );
         table.appendChild(row);
+        AddEvent_deleteSpecificRow();
       }
       function deleteCellRow() {
         // table element 찾기
+        let my_table = document.querySelector("table");
 
-        const table = document.querySelector("table");
-
-        // 행(Row) 삭제
-
-        ctable.deleteRow(-1);
+        // Delete second row
+        my_table.deleteRow(-1);
+      }
+      function deleteSpecificRow(e) {
+        e.target.parentElement.remove();
+      }
+      function AddEvent_deleteSpecificRow() {
+        m_tdset = document.querySelectorAll("div.cell-table tr td");
+        for (var m_td of m_tdset)
+          m_td.addEventListener("dblclick", deleteSpecificRow);
       }
     </script>
   </body>
