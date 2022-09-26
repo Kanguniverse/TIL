@@ -50,6 +50,14 @@
         font-weight: 600;
         cursor: pointer;
       }
+
+      table.numeric-cells td div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
     </style>
   </head>
   <body>
@@ -57,33 +65,35 @@
     <div class="cell-table">
       <table class="numeric-cells">
         <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-          <td>4</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
         </tr>
         <tr>
-          <td>5</td>
-          <td>6</td>
-          <td>7</td>
-          <td>8</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
         </tr>
         <tr>
-          <td>9</td>
-          <td>10</td>
-          <td>11</td>
-          <td>12</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
         </tr>
         <tr>
-          <td>13</td>
-          <td>14</td>
-          <td>15</td>
-          <td>16</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
         </tr>
       </table>
       <div class="ctl_init_btn"></div>
       <button class="row">행</button>
       <button class="column">열</button>
+      <button class="edit">편집</button>
+      <button class="output">콘솔출력</button>
       <div class="invisible">
         <button class="add">추가</button>
         <button class="delete">삭제</button>
@@ -107,6 +117,10 @@
         .querySelector(".row")
         .addEventListener("click", changeButtonColor);
       document.querySelector(".delete").addEventListener("click", deleteRow);
+      document.querySelector(".edit").addEventListener("click", editCell);
+      document
+        .querySelector(".output")
+        .addEventListener("click", consoleOutput);
 
       function selectRow(e) {
         if (flag_intbtn_click) {
@@ -164,6 +178,36 @@
           if (m_td.style.backgroundColor == "gray") {
             m_td.remove();
           }
+        }
+      }
+      function editCell() {
+        editCell_set = document.querySelectorAll("div.cell-table tr td");
+        for (var editCell of editCell_set) {
+          editCell.setAttribute("contenteditable", "true");
+        }
+      }
+      function consoleOutput() {
+        let output_text = [];
+        Output_set = document.querySelectorAll(
+          "div.cell-table tr td[contenteditable]"
+        );
+        if (Output_set.length) {
+          for (var Output of Output_set) {
+            if (parseInt(Output.textContent)) {
+              output_text.push(parseInt(Output.textContent));
+            }
+          }
+        } else {
+          alert("편집 가능 모드가 아닙니다");
+        }
+        console.log(output_text.length);
+        if (!output_text.length) {
+          alert("입력값을 입력하지 않았거나 숫자를 입력하지 않았습니다");
+        } else {
+          output_text.sort(function (a, b) {
+            return a - b;
+          });
+          console.log(output_text);
         }
       }
     </script>
