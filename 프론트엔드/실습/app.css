@@ -1,0 +1,50 @@
+/* #head_div {
+  background-color: #333333;
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: white;
+}
+h2 {
+  padding-left: 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+div {
+  padding: 15px;
+}
+#answer {
+  display: none;
+  padding-left: 10px;
+}
+span {
+  font-size: 20px;
+}
+article {
+  margin-bottom: 30px;
+}
+.SectionTitle {
+  padding: 0;
+  font-weight: 600;
+  font-size: 30px;
+}
+#correct_2 {
+  display: none;
+}
+table {
+  margin: 0 auto;
+  width: 95%;
+  border-collapse: collapse;
+  border: 2px solid black;
+}
+tr {
+  text-align: center;
+}
+#tr_head {
+  font-weight: 600;
+  background-color: gray;
+} */
+img {
+  height: 300px;
+  width: 300px;
+  object-fit: fill;
+}

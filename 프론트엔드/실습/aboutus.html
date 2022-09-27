@@ -9,113 +9,75 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
       rel="stylesheet"
     />
-    <style>
-      #head_div {
-        background-color: #333333;
-        font-size: 30px;
-        margin-bottom: 20px;
-        color: white;
-      }
-      img {
-        width: 45%;
-        height: 250px;
-        margin: 10px 2%;
-      }
-      h2 {
-        padding-left: 10px;
-        font-family: "Roboto", sans-serif;
-        font-size: 20px;
-      }
-      div {
-        padding: 15px;
-      }
-      #answer {
-        display: none;
-        padding-left: 10px;
-      }
-      span {
-        font-size: 20px;
-      }
-      article {
-        margin-bottom: 30px;
-      }
-      .SectionTitle {
-        padding: 0;
-        font-weight: 600;
-        font-size: 30px;
-      }
-      #correct_2 {
-        display: none;
-      }
-      table {
-        margin: 0 auto;
-        width: 95%;
-        border-collapse: collapse;
-        border: 2px solid black;
-      }
-      tr {
-        text-align: center;
-      }
-      #tr_head {
-        font-weight: 600;
-        background-color: gray;
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="app.css" />
   </head>
   <body>
     <!-- HTML 본문 영역-->
-    <header>
-      <div id="head_div">Minwoo's Blog</div>
-    </header>
-    <article id="AboutMe_ifm">
-      <div class="AboutME_content">
-        <div class="SectionTitle">About Me</div>
-      </div>
-      <table>
-        <tr id="tr_head">
-          <td>이름</td>
-          <td>생년월일</td>
-          <td>주소지</td>
-          <td>연락처</td>
-        </tr>
-        <tr>
-          <td>강민우</td>
-          <td>93.05.12</td>
-          <td>부산광역시</td>
-          <td>010-3114-0698</td>
-        </tr>
-      </table>
-    </article>
-    <article id="AboutMe_quiz">
-      <div class="SectionTitle">
-        Quiz. 다음 중 제가 좋아하는 가수는 누굴까요? <span id="answer">IU</span>
-      </div>
+    <div class="container-fluid">
+      <header>
+        <h1 class="display-3">Minwoo's Blog</h1>
+      </header>
+      <article id="AboutMe_ifm">
+        <div class="AboutME_content">
+          <div class="SectionTitle">About Me</div>
+        </div>
+        <table>
+          <tr id="tr_head">
+            <td>이름</td>
+            <td>생년월일</td>
+            <td>주소지</td>
+            <td>연락처</td>
+          </tr>
+          <tr>
+            <td>강민우</td>
+            <td>93.05.12</td>
+            <td>부산광역시</td>
+            <td>010-3114-0698</td>
+          </tr>
+        </table>
+      </article>
+      <article id="AboutMe_quiz">
+        <div class="SectionTitle">
+          Quiz. 다음 중 제가 좋아하는 가수는 누굴까요?
+          <span id="answer">IU</span>
+        </div>
 
-      <div>
-        <b><보기></b>
-      </div>
-      <img
-        class="wrong"
-        src="https://newsimg.sedaily.com/2022/03/30/263MBCDUNQ_1.jpg"
-      />
-      <img
-        id="correct"
-        src="https://dimg.donga.com/wps/NEWS/IMAGE/2021/12/24/110942647.2.jpg"
-      />
-      <img
-        class="wrong"
-        src="https://img.asiatoday.co.kr/file/2022y/08m/02d/2022080201000185800010521.jpg"
-      />
-      <img
-        class="wrong"
-        src="https://thumb.pann.com/tc_480/https://fimg5.pann.com/new/download.jsp?FileID=57109545"
-      />
-      <img id="correct_2" src="사진.jpg" />
-      <div id="mydiv">
-        정답을 알려면 다음 버튼을 클릭하세요
-        <button id="display_button">정답</button>
-      </div>
-    </article>
+        <div>
+          <b><보기></b>
+        </div>
+
+        <div class="row justify-content-around">
+          <img
+            class="wrong col-lg-3 col-6"
+            src="https://newsimg.sedaily.com/2022/03/30/263MBCDUNQ_1.jpg"
+          />
+          <img
+            id="correct col-lg-3 col-6"
+            src="https://dimg.donga.com/wps/NEWS/IMAGE/2021/12/24/110942647.2.jpg"
+          />
+          <img
+            class="wrong col-lg-3 col-6"
+            src="https://img.asiatoday.co.kr/file/2022y/08m/02d/2022080201000185800010521.jpg"
+          />
+          <img
+            class="wrong col-lg-3 col-6"
+            src="https://thumb.pann.com/tc_480/https://fimg5.pann.com/new/download.jsp?FileID=57109545"
+          />
+          <!-- <img class="col-3" id="display-none" src="사진.jpg" /> -->
+        </div>
+
+        <div id="mydiv">
+          정답을 알려면 다음 버튼을 클릭하세요
+          <button id="display_button">정답</button>
+        </div>
+      </article>
+    </div>
 
     <!-- 자바스크립트 영역 -->
     <script>
@@ -140,5 +102,20 @@
         }
       }
     </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
