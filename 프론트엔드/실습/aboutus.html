@@ -15,19 +15,116 @@
       integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="app.css" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      #head_div {
+        background-color: #333333;
+        font-size: 30px;
+        margin-bottom: 20px;
+        color: white;
+      }
+      img {
+        height: 250px;
+      }
+      h2 {
+        padding-left: 10px;
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+      }
+      div {
+        padding: 15px;
+      }
+      #answer {
+        display: none;
+        padding-left: 10px;
+      }
+      span {
+        font-size: 20px;
+      }
+      article {
+        margin-bottom: 30px;
+      }
+      .SectionTitle {
+        padding: 0;
+        font-weight: 600;
+        font-size: 30px;
+      }
+      #correct_2 {
+        display: none;
+      }
+      table {
+        margin: 0 auto;
+        width: 95%;
+        border-collapse: collapse;
+        border: 2px solid black;
+      }
+      tr {
+        text-align: center;
+      }
+      #tr_head {
+        font-weight: 600;
+        background-color: gray;
+      }
+    </style>
   </head>
   <body>
     <!-- HTML 본문 영역-->
-    <div class="container-fluid">
-      <header>
-        <h1 class="display-3">Minwoo's Blog</h1>
-      </header>
+    <div class="container-flex">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand h1" href="#">Minwoo's blog</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" href="#AboutMe_ifm"
+              >About Me <span class="sr-only">(current)</span></a
+            >
+            <a class="nav-link" href="#AboutMe_quiz">Quiz</a>
+          </div>
+        </div>
+      </nav>
       <article id="AboutMe_ifm">
         <div class="AboutME_content">
           <div class="SectionTitle">About Me</div>
         </div>
-        <table>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="row">이름</th>
+              <td>강민우</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">생년월일</th>
+              <td>93.05.12</td>
+            </tr>
+            <tr>
+              <th scope="row">주소지</th>
+              <td>부산광역시</td>
+            </tr>
+            <tr>
+              <th scope="row">이메일</th>
+              <td>rkdalsdn456@naver.com</td>
+            </tr>
+            <tr>
+              <th scope="row">취미</th>
+              <td>조깅, 콘서트 가기</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- <table>
           <tr id="tr_head">
             <td>이름</td>
             <td>생년월일</td>
@@ -40,38 +137,32 @@
             <td>부산광역시</td>
             <td>010-3114-0698</td>
           </tr>
-        </table>
+        </table> -->
       </article>
       <article id="AboutMe_quiz">
         <div class="SectionTitle">
           Quiz. 다음 중 제가 좋아하는 가수는 누굴까요?
           <span id="answer">IU</span>
         </div>
-
-        <div>
-          <b><보기></b>
-        </div>
-
-        <div class="row justify-content-around">
+        <div class="row">
           <img
-            class="wrong col-lg-3 col-6"
+            class="wrong col-6 col-md-3"
             src="https://newsimg.sedaily.com/2022/03/30/263MBCDUNQ_1.jpg"
           />
           <img
-            id="correct col-lg-3 col-6"
+            id="correct col-6 col-md-3"
             src="https://dimg.donga.com/wps/NEWS/IMAGE/2021/12/24/110942647.2.jpg"
           />
           <img
-            class="wrong col-lg-3 col-6"
+            class="wrong col-6 col-md-3"
             src="https://img.asiatoday.co.kr/file/2022y/08m/02d/2022080201000185800010521.jpg"
           />
           <img
-            class="wrong col-lg-3 col-6"
-            src="https://thumb.pann.com/tc_480/https://fimg5.pann.com/new/download.jsp?FileID=57109545"
+            class="wrong col-6 col-md-3"
+            src="https://dimg.donga.com/wps/NEWS/IMAGE/2022/03/02/112103945.2.jpg"
           />
-          <!-- <img class="col-3" id="display-none" src="사진.jpg" /> -->
+          <img class="col-6 col-md-3" id="correct_2" src="사진.jpg" />
         </div>
-
         <div id="mydiv">
           정답을 알려면 다음 버튼을 클릭하세요
           <button id="display_button">정답</button>
