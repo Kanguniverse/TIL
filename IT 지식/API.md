@@ -3,6 +3,7 @@
 ## API의 의미
 
 - API(API, Application Programming Interface)는 둘 이상의 컴퓨터 프로그램이 서로 통신하는 방법이자 컴퓨터 사이에 있는 중계 계층을 의미
+- 일종의 약속
 
 ### API의 구조
 

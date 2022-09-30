@@ -67,6 +67,11 @@
         font-weight: 600;
         background-color: gray;
       }
+      @media (max-width: 1000px) {
+        img.hidden {
+          display: none;
+        }
+      }
     </style>
   </head>
   <body>
@@ -154,11 +159,11 @@
             src="https://dimg.donga.com/wps/NEWS/IMAGE/2021/12/24/110942647.2.jpg"
           />
           <img
-            class="wrong col-6 col-md-3"
+            class="wrong col-6 col-md-3 hidden"
             src="https://img.asiatoday.co.kr/file/2022y/08m/02d/2022080201000185800010521.jpg"
           />
           <img
-            class="wrong col-6 col-md-3"
+            class="wrong col-6 col-md-3 hidden"
             src="https://dimg.donga.com/wps/NEWS/IMAGE/2022/03/02/112103945.2.jpg"
           />
           <img class="col-6 col-md-3" id="correct_2" src="사진.jpg" />
@@ -172,6 +177,43 @@
 
     <!-- 자바스크립트 영역 -->
     <script>
+      var delay = 300;
+      var timer = null;
+      var resizeEventCount = 0;
+      var prevWidth = 0;
+      window.addEventListener("resize", function () {
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+          var innerWidth = window.innerWidth;
+          console.log(
+            "event: " +
+              ++resizeEventCount +
+              ", width: " +
+              innerWidth +
+              ", " +
+              Math.abs(innerWidth - prevWidth)
+          );
+          prevWidth = innerWidth;
+        }, delay);
+      }); // 함수 실행
+      /*
+      var photo=document.getElementById("photos");
+      if (innerWidth-photo.width > 200) {
+        el=document.createElement("img");
+        photo.appendChild(el);
+      } else if (innerWidth < photo.width) {
+        photo.removeChild()
+      }
+      */
+      function changeT() {
+        mouse_condiction = true;
+        console.log("true");
+      }
+      function changeF() {
+        mouse_condiction = false;
+        console.log("false");
+      }
+
       var elt = document.getElementById("display_button");
       elt.addEventListener("click", eh);
       function eh() {
