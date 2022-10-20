@@ -25,3 +25,16 @@
   - 변수명이 짧기보다는 의미 있는 변수 이름을 쓰는 편이 항상 더 낫다
   - 불리언 변수에는 is를 사용하는 걸 추천
     - 예시 : `let isGameOver = true`
+
+## Null & undefined
+
+- undefined
+  - 아무 것도 정의된게 없는 값
+- null
+  - 사용자가 null로 특정하게 입력한 값
+  - 변수에 정의하는 값
+
+## 난수와 Math(수학 객체)
+
+- round : 반올림
+- abs : 절대값
