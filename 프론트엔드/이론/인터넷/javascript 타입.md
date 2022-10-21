@@ -38,3 +38,14 @@
 
 - round : 반올림
 - abs : 절대값
+
+## falsy and truthy
+
+- false values
+  - false
+  - 0
+  - ""(empty string)
+  - null
+  - undefined
+  - NaN
+- Everything else is truthy!
